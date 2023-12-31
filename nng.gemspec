@@ -14,4 +14,10 @@ Gem::Specification.new do |s|
                        Dir['./lib/**/*.rb']
   s.extensions       = %w[ext/rbnng/extconf.rb]
   s.require_paths    = %w[ext lib]
+
+  s.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
+
+  s.add_development_dependency "bundler"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "rake-compiler"
 end

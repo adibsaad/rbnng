@@ -23,14 +23,18 @@ typedef struct
 
 typedef struct
 {
-  VALUE socketObj; // A socket class instnace
-  VALUE nextMsg;   // Ruby string
+  VALUE socketObj; // A socket class instance
+  VALUE nextMsgBody; // Ruby string of msg body
+  VALUE nextMsgHeader; // Ruby string of msg header (optional)
 } RbnngSendMsgReq;
 
 extern VALUE socket_alloc(VALUE);
 extern VALUE socket_get_msg(VALUE);
 extern VALUE socket_send_msg(VALUE, VALUE);
+extern VALUE socket_send_msg_raw(VALUE, VALUE, VALUE);
 extern VALUE socket_dial(VALUE, VALUE);
 extern VALUE socket_listen(VALUE, VALUE);
+extern VALUE socket_get_opt_int(VALUE, VALUE);
+
 
 #endif

@@ -38,4 +38,5 @@ rbnng_sub0_Init(VALUE nng_module)
     rbnng_SocketSub0Class, "initialize", socket_sub0_initialize, 0);
   rb_define_method(rbnng_SocketSub0Class, "get_msg", socket_get_msg, 0);
   rb_define_method(rbnng_SocketSub0Class, "dial", socket_dial, 1);
+  rb_define_method(rbnng_SocketSub0Class, "get_opt_int", socket_get_opt_int, 1);
 }

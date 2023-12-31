@@ -48,8 +48,8 @@ rbnng_pair_Init(VALUE nng_module)
   rb_define_alloc_func(rbnng_SocketPair1Class, socket_alloc);
   rb_define_method(
     rbnng_SocketPair1Class, "initialize", socket_pair1_initialize, 0);
-  rb_define_method(rbnng_SocketPair1Class, "get_msg", socket_get_msg, 0);
-  rb_define_method(rbnng_SocketPair1Class, "send_msg", socket_send_msg, 1);
+  rb_define_method(rbnng_SocketPair1Class, "_get_msg", socket_get_msg, 0);
+  rb_define_method(rbnng_SocketPair1Class, "_send_msg", socket_send_msg, 1);
   rb_define_method(rbnng_SocketPair1Class, "listen", socket_listen, 1);
   rb_define_method(rbnng_SocketPair1Class, "dial", socket_dial, 1);
 
@@ -58,8 +58,9 @@ rbnng_pair_Init(VALUE nng_module)
   rb_define_alloc_func(rbnng_SocketPair0Class, socket_alloc);
   rb_define_method(
     rbnng_SocketPair0Class, "initialize", socket_pair0_initialize, 0);
-  rb_define_method(rbnng_SocketPair0Class, "get_msg", socket_get_msg, 0);
-  rb_define_method(rbnng_SocketPair0Class, "send_msg", socket_send_msg, 1);
+  rb_define_method(rbnng_SocketPair0Class, "_get_msg", socket_get_msg, 0);
+  rb_define_method(rbnng_SocketPair0Class, "_send_msg", socket_send_msg, 1);
   rb_define_method(rbnng_SocketPair0Class, "listen", socket_listen, 1);
   rb_define_method(rbnng_SocketPair0Class, "dial", socket_dial, 1);
+  rb_define_method(rbnng_SocketPair0Class, "get_opt_int", socket_get_opt_int, 1);
 }

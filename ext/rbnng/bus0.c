@@ -36,8 +36,9 @@ rbnng_bus0_Init(VALUE nng_module)
   rb_define_alloc_func(rbnng_SocketBus0Class, socket_alloc);
   rb_define_method(
     rbnng_SocketBus0Class, "initialize", socket_bus0_initialize, 0);
-  rb_define_method(rbnng_SocketBus0Class, "get_msg", socket_get_msg, 0);
-  rb_define_method(rbnng_SocketBus0Class, "send_msg", socket_send_msg, 1);
+  rb_define_method(rbnng_SocketBus0Class, "_get_msg", socket_get_msg, 0);
+  rb_define_method(rbnng_SocketBus0Class, "_send_msg", socket_send_msg, 1);
   rb_define_method(rbnng_SocketBus0Class, "listen", socket_listen, 1);
   rb_define_method(rbnng_SocketBus0Class, "dial", socket_dial, 1);
+  rb_define_method(rbnng_SocketBus0Class, "get_opt_int", socket_get_opt_int, 1);
 }

@@ -5,6 +5,7 @@
 #include <nng/nng.h>
 #include <ruby.h>
 
+#include "exceptions.h"
 #include "msg.h"
 #include "rbnng.h"
 #include "socket.h"
@@ -19,7 +20,7 @@ library_version(VALUE self_)
 }
 
 void
-Init_rbnng()
+Init_rbnng(void)
 {
   VALUE nng_module = rb_define_module("NNG");
   rb_define_singleton_method(nng_module, "nng_version", library_version, 0);

@@ -31,6 +31,7 @@ rbnng_push0_Init(VALUE nng_module)
   rb_define_alloc_func(rbnng_SocketPush0Class, socket_alloc);
   rb_define_method(
     rbnng_SocketPush0Class, "initialize", socket_push0_initialize, 0);
-  rb_define_method(rbnng_SocketPush0Class, "send_msg", socket_send_msg, 1);
+  rb_define_method(rbnng_SocketPush0Class, "_send_msg", socket_send_msg, 1);
   rb_define_method(rbnng_SocketPush0Class, "dial", socket_dial, 1);
+  rb_define_method(rbnng_SocketPush0Class, "get_opt_int", socket_get_opt_int, 1);
 }
